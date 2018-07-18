@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"test\"",
-    "build":"webpack "
+    "build": "webpack-dev-server --hot"
   },
   "repository": {
     "type": "git",
@@ -25,8 +25,10 @@
     "@types/react-dom": "^16.0.6",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-hot-loader": "^4.3.3",
     "webpack": "^4.16.1",
-    "webpack-cli": "^3.0.8"
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^5.2.0",
