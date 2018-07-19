@@ -8,7 +8,7 @@ class App extends React.Component<AppProps, {}> {
   render() {
     return (
       <h1>
-        Hellow from in {this.props.compiler} and {this.props.framework}
+        Hellow from in {this.props.compiler} and {this.props.framework}.
       </h1>
     );
   }
