@@ -34,6 +34,7 @@
     "react-dom": "^16.4.1",
     "react-hot-loader": "^4.0.0",
     "react-redux": "^5.0.7",
+    "react-router-redux": "^4.0.8",
     "redux": "^4.0.0",
     "ts-loader": "^4.4.2",
     "webpack": "^4.16.1",
