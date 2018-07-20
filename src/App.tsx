@@ -1,14 +1,13 @@
 import * as React from "react";
 import { hot } from 'react-hot-loader'
-export interface AppProps {
-  compiler: string;
-  framework: string;
-}
-class App extends React.Component<AppProps, {}> {
+import FeedsContainer from "./containers/FeedsContainer"
+
+class App extends React.Component<any, {}> {
   render() {
     return (
       <h1>
-        Hellow from in {this.props.compiler} and {this.props.framework}.
+        <FeedsContainer />
+        Hellow from in 
       </h1>
     );
   }
