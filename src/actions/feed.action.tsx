@@ -33,11 +33,11 @@ export function getFeed(): (dispatch: Dispatch<StoreState>) => Promise<void> {
     try {
       //await call here
       const feeds: any = await fetch(
-        "https://secure-inlet-13076.herokuapp.com/feeds",
+        "https://jsonplaceholder.typicode.com/posts",
         { method: "get" }
       );
-      console.log(feeds)
-      dispatch(getFeedSuccess(feeds));
+      const result: any = await feeds.json()
+      dispatch(getFeedSuccess(result));
     } catch (e) {
       dispatch(getFeedFailure(e.message));
     }

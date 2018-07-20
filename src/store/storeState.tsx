@@ -5,12 +5,13 @@ export default interface StoreState {
   readonly payload?: any;
   readonly loading?:boolean
 }
-// interface Feed {
-//     id:string;
-//     title:string;
-//     description:string;
-//     imageUrl:string
-// }
+export interface Feed {
+    id:number;
+    userId:number;
+    title:string;
+    body:string;
+    imageUrl?:string
+}
 // interface FeedModel {
 //     feeds:Feed[];
 //     type:any;
