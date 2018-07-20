@@ -2,7 +2,7 @@ import {
     getFeedRequestAction,
     getFeedSuccessAction,
     getFeedFailureAction
-} from "./feed.actions"
+} from "./action.interface"
 type ActionTypes = 
 | getFeedRequestAction
 | getFeedSuccessAction

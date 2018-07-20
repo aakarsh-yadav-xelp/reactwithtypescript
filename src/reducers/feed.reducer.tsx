@@ -1,4 +1,4 @@
-import { ActionTypeKeys, ActionTypeStates } from "../actions/actionTypeKeys";
+import { ActionTypeKeys } from "../actions/actionTypeKeys";
 import ActionTypes from "../actions/actionTypes";
 import initialState from "./feed.initialState";
 export default function feedReducer(state = initialState, action: ActionTypes) {

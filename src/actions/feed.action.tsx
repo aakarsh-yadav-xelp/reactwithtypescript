@@ -32,7 +32,11 @@ export function getFeed(): (dispatch: Dispatch<StoreState>) => Promise<void> {
     dispatch(getFeedRequest());
     try {
       //await call here
-      const feeds: any = [{ id: "123213", title: "aalakrs" }];
+      const feeds: any = await fetch(
+        "https://secure-inlet-13076.herokuapp.com/feeds",
+        { method: "get" }
+      );
+      console.log(feeds)
       dispatch(getFeedSuccess(feeds));
     } catch (e) {
       dispatch(getFeedFailure(e.message));
