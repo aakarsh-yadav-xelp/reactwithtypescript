@@ -1,12 +1,18 @@
+enum STATUS {
+REQUEST = "REQUEST",
+SUCCESS = "SUCCESS",
+ERROR = "ERROR"
+}
+export interface Feed {
+  id: number;
+  title: string;
+  description: string;
+  imageUrl: string;
+}
 export interface FeedModel {
-  status: string;
   loading: boolean;
-  feeds: Array<{
-    id: number;
-    title: string;
-    description: string;
-    imageUrl: string;
-  }>;
+  status: STATUS;
+  feeds: Feed[];
 }
 export namespace FeedModel {
   export enum Filter {

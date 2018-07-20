@@ -8,16 +8,13 @@
     "experimentalDecorators": true,
     "declaration": false,
     "removeComments": true,
+    "noImplicitAny": false,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "strict": true,
     "outDir": "dist",
     "lib": ["es6", "es7", "dom"],
     "baseUrl": "src",
-    "rootDir": "src",
-    "paths": {
-      "src/*": ["./src/*"]
-    }
   },
   "exclude": ["dist", "build", "node_modules"]
 }

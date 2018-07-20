@@ -1,8 +1,8 @@
 import { Store, createStore, applyMiddleware } from "redux";
 import { routerMiddleware } from "react-router-redux";
 import { History } from "history";
-import { RootState, rootReducer } from "src/reducers";
-import * as api from "src/lib";
+import { RootState, rootReducer } from "../reducers";
+import * as api from "../lib";
 
 declare var module: any
 
@@ -10,7 +10,7 @@ export function configureStore(
   history: History,
   initialState?: RootState
 ): Store<RootState> {
-  let middleware = applyMiddleware(api, routerMiddleware(history));
+  let middleware = applyMiddleware(api as any, routerMiddleware(history));
   const store = createStore(
     rootReducer as any,
     initialState as any,
