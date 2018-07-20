@@ -5,10 +5,7 @@ import FeedsContainer from "./containers/FeedsContainer"
 class App extends React.Component<any, {}> {
   render() {
     return (
-      <h1>
         <FeedsContainer />
-        Hellow from in 
-      </h1>
     );
   }
 }
