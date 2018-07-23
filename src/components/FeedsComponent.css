@@ -1,0 +1,11 @@
+.base{
+    width:100%;
+    padding:0px;
+    margin:0;
+    background-color: #ececec;
+}
+.feeds{
+    background-color: white;
+    margin:20px;
+    padding:15px;
+}

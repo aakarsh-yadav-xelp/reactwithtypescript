@@ -33,7 +33,7 @@ export function getFeed(): (dispatch: Dispatch<StoreState>) => Promise<void> {
     try {
       //await call here
       const feeds: any = await fetch(
-        "https://jsonplaceholder.typicode.com/posts",
+        "https://live-api-mocker.herokuapp.com/feeds",
         { method: "get" }
       );
       const result: any = await feeds.json()

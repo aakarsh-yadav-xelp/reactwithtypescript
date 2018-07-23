@@ -24,6 +24,7 @@ export default class FeedsComponent extends React.Component<IFeedProps> {
             return (
               <div className="feeds">
                 <h3>{feed.title}</h3>
+                <img src={feed.imageUrl} alt={feed.title}/>
                 <p>{feed.body}</p>
               </div>
             );
