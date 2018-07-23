@@ -6,7 +6,7 @@ import {
   getFeedFailureAction
 } from "./action.interface";
 import StoreState from "../store/storeState";
-
+const API_URL_PATH : string = "https://live-api-mocker.herokuapp.com/"
 function getFeedRequest(): getFeedRequestAction {
   return {
     type: keys.ActionTypeKeys.GET_FEED_REQUEST
@@ -33,7 +33,7 @@ export function getFeed(): (dispatch: Dispatch<StoreState>) => Promise<void> {
     try {
       //await call here
       const feeds: any = await fetch(
-        "https://live-api-mocker.herokuapp.com/feeds",
+        `${API_URL_PATH}feeds`,
         { method: "get" }
       );
       const result: any = await feeds.json()

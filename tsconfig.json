@@ -4,7 +4,7 @@
     "target": "es5",
     "jsx": "react",
     "module": "es6",
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "experimentalDecorators": true,
     "declaration": false,
     "removeComments": true,
@@ -16,8 +16,12 @@
     "baseUrl": "src",
     "rootDir": "src",
     "paths": {
-      "src/*": ["./src/*"]
-    }
+      "src/*": ["./src/*"],
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types/"
+  ]
   },
   "exclude": ["dist", "build", "node_modules"]
 }
