@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as styles from "./Image.css"
-
+import VisibleChild from "./VisibleChild"
 interface props  {
   imageUrl: string;
 }
@@ -8,6 +8,7 @@ interface props  {
 export default class Image extends React.Component<props, {}> {
   render() {
     return (
+        <VisibleChild>
       <div className={styles.base}>
         <img
           className={styles.image}
@@ -15,6 +16,7 @@ export default class Image extends React.Component<props, {}> {
           alt={this.props.imageUrl}
         />
       </div>
+      </VisibleChild>
     );
   }
 }
