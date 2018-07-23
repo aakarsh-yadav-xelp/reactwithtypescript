@@ -6,7 +6,7 @@ import {
   getFeedFailureAction
 } from "./action.interface";
 import StoreState from "../store/storeState";
-const API_URL_PATH : string = "https://live-api-mocker.herokuapp.com/"
+export const API_URL_PATH : string = "https://live-api-mocker.herokuapp.com/"
 function getFeedRequest(): getFeedRequestAction {
   return {
     type: keys.ActionTypeKeys.GET_FEED_REQUEST

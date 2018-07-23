@@ -6,11 +6,15 @@ import Image from "./Image";
 interface IFeedProps  {
   readonly feeds: any;
    getFeeds: () => (dispatch: Dispatch<StoreState>) => Promise<void>;
+   history:any
 }
 
 export default class FeedsComponent extends React.Component<IFeedProps> {
   componentDidMount() {
     this.props.getFeeds();
+  }
+  private navigate = (id:number) =>{
+  this.props.history.push(`feed/${id}`)
   }
   public render() {
     if (this.props.feeds.loading) {
@@ -22,7 +26,7 @@ export default class FeedsComponent extends React.Component<IFeedProps> {
           this.props.feeds.feeds.feeds &&
           this.props.feeds.feeds.feeds.map((feed: any, idx: number) => {
             return (
-              <div className={styles.feeds} key={idx}>
+              <div className={styles.feeds} key={idx} onClick={()=>this.navigate(feed.id)}>
                 <h3>{feed.title}</h3>
 
                 <Image imageUrl={feed.imageUrl} />
