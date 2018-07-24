@@ -2,7 +2,7 @@ import { connect  } from "react-redux"
 import {withRouter} from"react-router-dom"
 import {bindActionCreators ,Dispatch} from "redux"
 import StoreState from "../store/storeState";
-import { getFeed } from "../actions/feed.action";
+import { getFeeds } from "../actions/feeds.action";
 import FeedsComponent from "../components/FeedsComponent";
 
 function mapStateToProps(state:StoreState){
@@ -12,7 +12,7 @@ function mapStateToProps(state:StoreState){
 }
 function mapDispatchToProps(dispatch : Dispatch<StoreState>){
     return {
-        getFeeds:bindActionCreators(getFeed,dispatch)
+        getFeeds:bindActionCreators(getFeeds,dispatch)
     }
 }
 export default withRouter(connect(mapStateToProps,mapDispatchToProps)(FeedsComponent)) as React.ComponentClass<{}>
