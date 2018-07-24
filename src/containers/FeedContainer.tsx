@@ -3,15 +3,16 @@ import {withRouter} from "react-router-dom"
 import {bindActionCreators, Dispatch} from "redux"
 import StoreState from "../store/storeState"
 import FeedComponent from "../components/FeedComponent" 
+import { getFeedComponent } from "../actions/feed.action";
 
 function mapStateToProps(state:StoreState){
     return {
-        state
+        state:state.feed
     }
 }
-function mapDispatchToProps(dispatch:Dispatch<StoreState>){
+function mapDispatchToProps(dispatch:Dispatch){
     return {
-        getFeed:bindActionCreators(()=>{return null},dispatch)
+        getFeed:(id:number)=>bindActionCreators(()=>getFeedComponent(id),dispatch)
     }
 }
 export default withRouter(connect(mapStateToProps,mapDispatchToProps)(FeedComponent))

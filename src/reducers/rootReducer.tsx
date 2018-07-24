@@ -1,8 +1,10 @@
 import { combineReducers } from "redux"
 import {RootState } from "../store/storeState"
-import feedReducer from "./feed.reducer"
-
+import feedsReducer from "./feed.reducer"
+import feedReducer from "./feedComponent.reducer"
 const rootReducer = combineReducers<RootState>({
-    feeds:feedReducer
+    feeds:feedsReducer,
+    feed:feedReducer
 })
 export default rootReducer;
+

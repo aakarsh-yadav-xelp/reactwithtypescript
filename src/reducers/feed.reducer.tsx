@@ -1,7 +1,7 @@
 import { ActionTypeKeys } from "../actions/actionTypeKeys";
 import ActionTypes from "../actions/actionTypes";
 import initialState from "./feed.initialState";
-export default function feedReducer(state = initialState, action: ActionTypes) {
+export default function feedsReducer(state = initialState, action: ActionTypes) {
   switch (action.type) {
     case ActionTypeKeys.GET_FEED_REQUEST:
       return Object.assign({}, state, {
@@ -12,7 +12,7 @@ export default function feedReducer(state = initialState, action: ActionTypes) {
         feeds: action.payload,
         loading: false
       });
-    case ActionTypeKeys.GET_FEED_SUCCESS:
+    case ActionTypeKeys.GET_FEED_FAILURE:
       return Object.assign({}, state, {
         error: action.payload.error,
         loading: false

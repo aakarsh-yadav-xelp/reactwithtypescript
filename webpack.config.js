@@ -23,7 +23,9 @@ module.exports = {
         use: [
           {
             loader: "babel-loader",
-            options: { plugins: ["react-hot-loader/babel"] }
+            options: {
+              plugins: ["react-hot-loader/babel", "transform-runtime"]
+            }
           },
           "ts-loader"
         ].filter(Boolean),
@@ -69,6 +71,7 @@ module.exports = {
   // dependencies, which allows browsers to cache those libraries between builds.
 
   plugins: [
+    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: "./index.html"
