@@ -18,5 +18,6 @@ export interface Feed {
 //     loading:boolean
 // }
 export interface RootState {
-    feeds:any
+    feeds:any,
+    newFeeds:any
 }
