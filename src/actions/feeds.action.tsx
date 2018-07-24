@@ -35,7 +35,6 @@ export function getFeeds(): (dispatch: Dispatch<StoreState>) => Promise<void> {
         { method: "get" }
       );
       const result: any = await feeds.json();
-      console.log(result);
       dispatch(getFeedSuccess(result));
     } catch (e) {
       dispatch(getFeedFailure(e.message));

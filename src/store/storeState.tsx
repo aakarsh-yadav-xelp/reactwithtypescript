@@ -19,5 +19,5 @@ export interface Feed {
 // }
 export interface RootState {
     feeds:any,
-    feed:any
+    newFeeds:any
 }

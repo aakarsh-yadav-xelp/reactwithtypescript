@@ -16,7 +16,7 @@ export interface getFeedFailureAction extends Action {
 }
 
 // Down here, we'll create a discriminated union type of all actions which will be used for our reducer.
-export type ChatActions =
+export type FeedActions =
   | getFeedRequestAction
   | getFeedSuccessAction
   | getFeedFailureAction;
