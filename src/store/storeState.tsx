@@ -24,5 +24,5 @@ export interface RootState {
 }
 export default interface StoreState {
     feeds: FeedStore;
-    feed:FeedComponent
+    feed:FeedComponentStore
   }

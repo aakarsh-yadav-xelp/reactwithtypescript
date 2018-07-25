@@ -5,12 +5,13 @@ var path = require("path");
 var sourcePath = path.join(__dirname, "./src");
 
 var WebpackCleanupPlugin = require("webpack-cleanup-plugin");
-
+console.log(path.resolve(__dirname, '..', 'dist'))
 module.exports = {
   entry: "./src/index.tsx",
   output: {
     filename: "bundle.js",
-    path: __dirname + "/dist"
+    path: path.resolve(__dirname, '..', 'dist'),
+    publicPath: '/'
   },
   devtool: "source-map",
   resolve: {

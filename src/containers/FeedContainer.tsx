@@ -7,12 +7,13 @@ import { getFeedComponent } from "../actions/feed.action";
 
 function mapStateToProps(state:StoreState){
     return {
-        state:state.feed
+        feed:state.feed.feed,
+        loading:state.feed.loading
     }
 }
 function mapDispatchToProps(dispatch:Dispatch){
     return {
-        getFeed:(id:number)=>bindActionCreators(()=>getFeedComponent(id),dispatch)
+        getFeed:bindActionCreators((id)=>getFeedComponent(id),dispatch)
     }
 }
 export default withRouter(connect(mapStateToProps,mapDispatchToProps)(FeedComponent))
