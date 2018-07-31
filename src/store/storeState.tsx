@@ -1,22 +1,28 @@
-import * as keys from "../actions/actionTypeKeys";
 
-export default interface StoreState {
-  readonly type: keys.ActionTypeKeys;
-  readonly payload?: any;
-  readonly loading?:boolean
-}
 export interface Feed {
     id:number;
-    userId:number;
     title:string;
-    body:string;
-    imageUrl?:string
+    imageUrl:string
 }
-// interface FeedModel {
-//     feeds:Feed[];
-//     type:any;
-//     loading:boolean
-// }
+export interface FeedComponent {
+    id:number;
+    title:string;
+    description:string;
+    imageUrl:string
+}
+export interface FeedComponentStore {
+    feed:FeedComponent;
+    loading:boolean
+}
+export interface FeedStore {
+    feeds:Feed[];
+    loading:boolean
+}
 export interface RootState {
-    feeds:any
+    feeds:any;
+    feed:any
 }
+export default interface StoreState {
+    feeds: FeedStore;
+    feed:FeedComponentStore
+  }

@@ -1,6 +1,7 @@
-import StoreState  from "../store/storeState"
+import { FeedStore } from "../store/storeState";
 
-const defaultState: StoreState = {
-    loading:false,
-}
-export default defaultState
+const defaultState: FeedStore = {
+  loading: false,
+  feeds: []
+};
+export default defaultState;

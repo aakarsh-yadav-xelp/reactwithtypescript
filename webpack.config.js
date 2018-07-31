@@ -5,12 +5,12 @@ var path = require("path");
 var sourcePath = path.join(__dirname, "./src");
 
 var WebpackCleanupPlugin = require("webpack-cleanup-plugin");
-
 module.exports = {
   entry: "./src/index.tsx",
   output: {
     filename: "bundle.js",
-    path: __dirname + "/dist"
+    path: path.resolve(__dirname, '..', 'dist'),
+    publicPath: '/'
   },
   devtool: "source-map",
   resolve: {
@@ -23,7 +23,9 @@ module.exports = {
         use: [
           {
             loader: "babel-loader",
-            options: { plugins: ["react-hot-loader/babel"] }
+            options: {
+              plugins: ["react-hot-loader/babel", "transform-runtime"]
+            }
           },
           "ts-loader"
         ].filter(Boolean),
@@ -69,6 +71,7 @@ module.exports = {
   // dependencies, which allows browsers to cache those libraries between builds.
 
   plugins: [
+    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: "./index.html"

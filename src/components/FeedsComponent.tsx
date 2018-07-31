@@ -1,11 +1,10 @@
 import * as React from "react";
 import { Dispatch } from "redux";
-import StoreState from "store/storeState";
 import * as styles from "./FeedsComponent.css";
 import Image from "./Image";
 interface IFeedProps  {
   readonly feeds: any;
-   getFeeds: () => (dispatch: Dispatch<StoreState>) => Promise<void>;
+   getFeeds: () => (dispatch: Dispatch) => Promise<void>;
    history:any
 }
 
@@ -22,9 +21,8 @@ export default class FeedsComponent extends React.Component<IFeedProps> {
     }
     return (
       <div className={styles.base}>
-        {this.props.feeds.feeds &&
-          this.props.feeds.feeds.feeds &&
-          this.props.feeds.feeds.feeds.map((feed: any, idx: number) => {
+        {this.props.feeds &&
+          this.props.feeds.map((feed: any, idx: number) => {
             return (
               <div className={styles.feeds} key={idx} onClick={()=>this.navigate(feed.id)}>
                 <h3>{feed.title}</h3>

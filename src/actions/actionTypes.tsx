@@ -1,10 +1,16 @@
 import {
     getFeedRequestAction,
     getFeedSuccessAction,
-    getFeedFailureAction
+    getFeedFailureAction,
+    getFeedComponentFailureAction,
+    getFeedComponentRequestAction,
+    getFeedComponentSuccessAction
 } from "./action.interface"
 type ActionTypes = 
 | getFeedRequestAction
 | getFeedSuccessAction
-| getFeedFailureAction;
+| getFeedFailureAction
+| getFeedComponentFailureAction
+| getFeedComponentRequestAction
+| getFeedComponentSuccessAction;
 export default ActionTypes
